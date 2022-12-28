@@ -1,0 +1,9 @@
+<h1> Importação de Nota Fiscal XML </h1>
+
+<%= form_tag import_notes_path, multipart: true do %>
+    <div class="form-group">
+        <%= file_field_tag :note_file_xml, required: true %>
+    </div>
+    <%= submit_tag "Enviar", class: 'btn btn-primary', data: {disable_with: "processing"} %>
+<% end %>
+<%= link_to "Voltar", :back, class: 'btn btn-default', style: 'margin-bottom: 25px;' %>

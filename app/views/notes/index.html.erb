@@ -1,0 +1,20 @@
+<h1> Notas fiscais importadas </h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th> Código </th>
+    <th> Valor NFe </th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @notes.each do |note| %>
+      <tr>
+        <td><%= link_to note.codigo, report_path(note) %></td>
+        <td><%= number_to_currency(note.valor) %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Processar uma nota fiscal", proccess_note_path, class: 'btn btn-primary', style: 'margin-bottom: 25px;' %>

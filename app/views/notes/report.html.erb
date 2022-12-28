@@ -1,0 +1,47 @@
+<h1> Relatório da Nota Fiscal <%= @note.codigo %> </h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th> Código </th>
+            <th> Descrição </th>
+            <th> Unidade de Compra </th>
+            <th> Quantidade </th>
+            <th> Valor Unitário </th>
+            <th> Valor da Compra </th>
+            <th> ICMS </th>
+            <th> IPI </th>
+            <th> PIS </th>
+            <th> COFINS </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @note.products.each do |product| %>
+            <tr>
+                <td><%= product.codigo %></td>
+                <td><%= product.descricao %></td>
+                <td><%= product.unidade_compra %></td>
+                <td><%= product.quantidade_compra.to_f %></td>
+                <td><%= number_to_currency(product.valor_unitario)%></td>
+                <td><%= number_to_currency(product.valor_compra) %></td>
+                <td><%= number_to_currency(product.icms) %></td>
+                <td><%= number_to_currency(product.ipi) %></td>
+                <td><%= number_to_currency(product.pis) %></td>
+                <td><%= number_to_currency(product.cofins) %></td>
+            </tr>
+        <% end %>
+        <tr>
+            <td> <strong> Total </strong> </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><%= number_to_currency(@note.total_valor_produtos) %></td>
+            <td><%= number_to_currency(@note.icms) %></td>
+            <td><%= number_to_currency(@note.ipi) %></td>
+            <td><%= number_to_currency(@note.pis) %></td>
+            <td><%= number_to_currency(@note.cofins) %></td> 
+        </tr>
+    </tbody>
+</table>
+
+<%= link_to "Voltar", :back, class: 'btn btn-default', style: 'margin-bottom: 25px;' %>

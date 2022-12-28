@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigo: MyString
+  descricao: MyString
+  uCompra: 9.99
+  qCompra: 9.99
+  valor: 9.99
+  icms: 9.99
+  ipi: 9.99
+  pis: 9.99
+  cofins: 9.99
+  outro: 9.99
+  note: one
+
+two:
+  codigo: MyString
+  descricao: MyString
+  uCompra: 9.99
+  qCompra: 9.99
+  valor: 9.99
+  icms: 9.99
+  ipi: 9.99
+  pis: 9.99
+  cofins: 9.99
+  outro: 9.99
+  note: two
